@@ -101,3 +101,4 @@ delArr.length = delArr.length-1;
 console.log(delArr,"delete from Array");
 
 
+//Using above we'll learn Array data structure in javascript 
