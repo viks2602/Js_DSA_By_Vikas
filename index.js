@@ -102,3 +102,73 @@ console.log(delArr,"delete from Array");
 
 
 //Using above we'll learn Array data structure in javascript 
+
+
+
+// stack 
+const stack = {
+    items : new Array(5),
+    top : -1,
+    maxSize : 5,
+    
+    // add element 
+    push :element =>{
+        if(stack.top >= stack.maxSize -1 ){
+            console.log('stack is full');
+            return false;
+        }
+        stack.top++;
+        stack.items[stack.top]= element;
+        console.log(`${element} pushed to stack`);
+        return true;
+    },
+    //remove element
+    pop :()=>{
+        if(stack.top == -1){
+            console.log('stack is empty');
+            return null;
+        }
+        const element = stack.items[stack.top];
+        stack.items[stack.top] = undefined; 
+        stack.top--;
+        console.log(`${element} popped from stack`);
+        return element;
+    },
+    //check is empty
+    isEmpty :()=> stack.top === -1,
+    //check is full
+    isFull:() => stack.top === stack.maxSize - 1,
+    // display elements 
+    display:()=>{
+         if (stack.isEmpty()) {
+            console.log("Stack is empty");
+            return;
+        }
+            console.log("Stack contents:");
+        for (let i = 0; i <= stack.top; i++) {
+            console.log(stack.items[i]);
+        }
+    }
+    }
+    
+    
+stack.push(1); 
+stack.push(2); 
+stack.push(3); 
+stack.push(4); 
+stack.push(5); 
+stack.push(6); 
+stack.display(); 
+
+stack.pop(); 
+stack.pop(); 
+stack.display(); 
+
+stack.pop(); 
+stack.pop(); 
+stack.pop(); 
+stack.pop(); 
+
+
+
+
